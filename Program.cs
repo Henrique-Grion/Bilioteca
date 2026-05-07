@@ -26,7 +26,7 @@ internal static class Program
         };
         db.Livros.Add(l);
         db.SaveChanges();
-        Livro? l2 = db.Livros.AsQueryable().FirstOrDefault(x => x.Id == 1);
+        Livro? l2 = db.Livros.FirstOrDefault();
         if (l2 != null)
         {
             MessageBox.Show($"Livro encontrado: {l2.Titulo} por {l2.Autor}, publicado em {l2.AnoPublicacao}");
