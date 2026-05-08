@@ -3,6 +3,7 @@ using System;
 using Bilioteca;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Bilioteca.Migrations
 {
     [DbContext(typeof(BancoDados))]
-    partial class BancoDadosModelSnapshot : ModelSnapshot
+    [Migration("20260508000257_TabelaEmprestimo")]
+    partial class TabelaEmprestimo
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "9.0.0");
@@ -70,34 +73,6 @@ namespace Bilioteca.Migrations
                         .IsUnique();
 
                     b.ToTable("Estoques");
-                });
-
-            modelBuilder.Entity("Bilioteca.Entidades.ListaEspera", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("TEXT");
-
-                    b.Property<DateTime>("DataEntrada")
-                        .HasColumnType("TEXT");
-
-                    b.Property<Guid>("LivroId")
-                        .HasColumnType("TEXT");
-
-                    b.Property<int>("Posicao")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<Guid>("UsuarioId")
-                        .HasColumnType("TEXT");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("UsuarioId");
-
-                    b.HasIndex("LivroId", "UsuarioId")
-                        .IsUnique();
-
-                    b.ToTable("ListaEspera");
                 });
 
             modelBuilder.Entity("Bilioteca.Entidades.Livro", b =>
@@ -191,25 +166,6 @@ namespace Bilioteca.Migrations
                         .IsRequired();
 
                     b.Navigation("Livro");
-                });
-
-            modelBuilder.Entity("Bilioteca.Entidades.ListaEspera", b =>
-                {
-                    b.HasOne("Bilioteca.Entidades.Livro", "Livro")
-                        .WithMany()
-                        .HasForeignKey("LivroId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
-                    b.HasOne("Bilioteca.Entidades.Usuario", "Usuario")
-                        .WithMany()
-                        .HasForeignKey("UsuarioId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
-                    b.Navigation("Livro");
-
-                    b.Navigation("Usuario");
                 });
 
             modelBuilder.Entity("Bilioteca.Entidades.Livro", b =>

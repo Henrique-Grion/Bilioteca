@@ -1,0 +1,29 @@
+﻿namespace Bilioteca.Entidades;
+
+enum TipoUsuario
+{
+    Funcionario,
+    Leitor
+}
+
+internal class Usuario
+{
+    private Guid Id { get; set; }
+    public Guid GetGuid() => Id;
+    public string Nome { get; set; }
+    public string Email { get; set; }
+    private string NomeUsuario { get; set; }
+    private string Senha { get; set; }
+    public TipoUsuario Tipo { get; set; }
+    public int Idade { get; set; }
+    public bool EhFuncionario => Tipo == TipoUsuario.Funcionario;
+    public bool EhLeitor => Tipo == TipoUsuario.Leitor;
+    public void DefinirSenha(string senha)
+    {
+        Senha = senha;
+    }
+    public bool VerificarSenha(string senha)
+    {
+        return Senha == senha;
+    }
+}
