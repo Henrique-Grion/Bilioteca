@@ -6,7 +6,7 @@ internal class Emprestimo
     public Guid GetGuid() => Id;
 
     public Guid LeitorId { get; set; }
-    public Usuario Leitor { get; set; }
+    public UsuarioSistema Leitor { get; set; }
 
     public Guid LivroId { get; set; }
     public Livro Livro { get; set; }
@@ -15,5 +15,5 @@ internal class Emprestimo
     public DateTime? DataDevolucao { get; set; }
 
     public Guid? FuncionarioId { get; set; }
-    public Usuario Funcionario { get; set; }
+    public UsuarioSistema Funcionario { get; set; }
 }

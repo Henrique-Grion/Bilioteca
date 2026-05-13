@@ -28,10 +28,10 @@ internal class BancoDados : DbContext
 
 
         // USUARIO
-        modelBuilder.Entity<Usuario>()
+        modelBuilder.Entity<UsuarioSistema>()
             .HasKey("Id");
 
-        modelBuilder.Entity<Usuario>()
+        modelBuilder.Entity<UsuarioSistema>()
             .Property<Guid>("Id")
             .ValueGeneratedOnAdd();
 

@@ -6,13 +6,13 @@ enum TipoUsuario
     Leitor
 }
 
-internal class Usuario
+internal class UsuarioSistema
 {
     private Guid Id { get; set; }
     public Guid GetGuid() => Id;
     public string Nome { get; set; }
     public string Email { get; set; }
-    private string NomeUsuario { get; set; }
+    private string Usuario { get; set; }
     private string Senha { get; set; }
     public TipoUsuario Tipo { get; set; }
     public int Idade { get; set; }
@@ -22,8 +22,9 @@ internal class Usuario
     {
         Senha = senha;
     }
-    public bool VerificarSenha(string senha)
+    public bool Autenticar(string usuario, string senha)
     {
-        return Senha == senha;
+        bool autenticado = (usuario == Usuario && senha == Senha);
+        return autenticado;
     }
 }
