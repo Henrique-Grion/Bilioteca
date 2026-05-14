@@ -1,5 +1,7 @@
 ﻿namespace Bilioteca.Entidades;
 
+using Bilioteca.Utils;
+
 enum TipoUsuario
 {
     Funcionario,
@@ -20,10 +22,10 @@ internal class Usuario
     public bool EhLeitor => Tipo == TipoUsuario.Leitor;
     public void DefinirSenha(string senha)
     {
-        Senha = senha;
+        Senha = PasswordHasher.Hash(senha);
     }
     public bool VerificarSenha(string senha)
     {
-        return Senha == senha;
+        return PasswordHasher.Verify(senha, Senha);
     }
 }
