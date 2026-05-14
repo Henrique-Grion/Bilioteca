@@ -16,4 +16,20 @@ internal class Emprestimo
 
     public Guid? FuncionarioId { get; set; }
     public UsuarioSistema Funcionario { get; set; }
+    public void Emprestar(Livro livro, UsuarioSistema leitor, UsuarioSistema funcionario)
+    {
+        Id = Guid.NewGuid();
+        LivroId = livro.GetGuid();
+        Livro = livro;
+        LeitorId = leitor.GetGuid();
+        Leitor = leitor;
+        FuncionarioId = funcionario.GetGuid();
+        Funcionario = funcionario;
+        DataEmprestimo = DateTime.Now;
+        DataDevolucao = null;
+    }
+    public void Devolver()
+    {
+        DataDevolucao = DateTime.Now;
+    }
 }
