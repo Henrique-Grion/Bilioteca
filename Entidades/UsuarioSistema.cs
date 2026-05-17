@@ -14,7 +14,7 @@ internal class UsuarioSistema
     public Guid GetGuid() => Id;
     public string Nome { get; set; }
     public string Email { get; set; }
-    private string Usuario { get; set; }
+    public string Usuario { get; set; }
     private string Senha { get; set; }
     public TipoUsuario Tipo { get; set; }
     public int Idade { get; set; }
@@ -24,7 +24,7 @@ internal class UsuarioSistema
     {
         Senha = PasswordHasher.Hash(senha);
     }
-    public bool Autenticar(string usuario, string senha)
+    public bool Autenticar(string senha)
     {
         return PasswordHasher.Verify(senha, Senha);
     }

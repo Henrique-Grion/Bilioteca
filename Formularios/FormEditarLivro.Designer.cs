@@ -1,6 +1,6 @@
 ﻿namespace Bilioteca.Formularios
 {
-    partial class EditarLivro
+    partial class FormEditarLivro
     {
         /// <summary>
         /// Required designer variable.

@@ -28,90 +28,112 @@
         /// </summary>
         private void InitializeComponent()
         {
-            btnLogin = new Button();
-            btnEsqueci = new Button();
-            txtUsuario = new TextBox();
-            txtSenha = new TextBox();
-            label1 = new Label();
-            label2 = new Label();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormLogin));
+            ButtonEntrar = new Button();
+            ButtonEsqueci = new Button();
+            TextBoxUsuario = new TextBox();
+            TextBoxSenha = new TextBox();
+            LabelUsuario = new Label();
+            LabelSenha = new Label();
+            ButtonCancelar = new Button();
             SuspendLayout();
             // 
-            // btnLogin
+            // ButtonEntrar
             // 
-            this.btnLogin.Location = new Point(397, 257);
-            this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new Size(75, 23);
-            this.btnLogin.TabIndex = 0;
-            this.btnLogin.Text = "Login";
-            this.btnLogin.UseVisualStyleBackColor = true;
-            this.btnLogin.Click += this.btnLogin_Click;
+            ButtonEntrar.Location = new Point(257, 201);
+            ButtonEntrar.Name = "ButtonEntrar";
+            ButtonEntrar.Size = new Size(75, 23);
+            ButtonEntrar.TabIndex = 0;
+            ButtonEntrar.Text = "Entrar";
+            ButtonEntrar.UseVisualStyleBackColor = true;
+            ButtonEntrar.Click += ButtonEntrar_Click;
             // 
-            // btnEsqueci
+            // ButtonEsqueci
             // 
-            this.btnEsqueci.Location = new Point(276, 257);
-            this.btnEsqueci.Name = "btnEsqueci";
-            this.btnEsqueci.Size = new Size(115, 23);
-            this.btnEsqueci.TabIndex = 1;
-            this.btnEsqueci.Text = "Esqueci a Senha";
-            this.btnEsqueci.UseVisualStyleBackColor = true;
-            this.btnEsqueci.Click += this.btnEsqueci_Click;
+            ButtonEsqueci.Location = new Point(12, 201);
+            ButtonEsqueci.Name = "ButtonEsqueci";
+            ButtonEsqueci.Size = new Size(115, 23);
+            ButtonEsqueci.TabIndex = 1;
+            ButtonEsqueci.Text = "Esqueci a Senha";
+            ButtonEsqueci.UseVisualStyleBackColor = true;
+            ButtonEsqueci.Click += ButtonEsqueci_Click;
             // 
-            // boxUsuario
+            // TextBoxUsuario
             // 
-            this.txtUsuario.Location = new Point(251, 104);
-            this.txtUsuario.Name = "boxUsuario";
-            this.txtUsuario.Size = new Size(227, 23);
-            this.txtUsuario.TabIndex = 2;
+            TextBoxUsuario.Location = new Point(82, 47);
+            TextBoxUsuario.Name = "TextBoxUsuario";
+            TextBoxUsuario.Size = new Size(227, 23);
+            TextBoxUsuario.TabIndex = 2;
             // 
-            // boxSenha
+            // TextBoxSenha
             // 
-            txtSenha.Location = new Point(251, 153);
-            txtSenha.Name = "boxSenha";
-            txtSenha.Size = new Size(227, 23);
-            txtSenha.TabIndex = 3;
+            TextBoxSenha.Location = new Point(82, 96);
+            TextBoxSenha.Name = "TextBoxSenha";
+            TextBoxSenha.Size = new Size(227, 23);
+            TextBoxSenha.TabIndex = 3;
+            TextBoxSenha.UseSystemPasswordChar = true;
             // 
-            // label1
+            // LabelUsuario
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(171, 112);
-            label1.Name = "label1";
-            label1.Size = new Size(47, 15);
-            label1.TabIndex = 4;
-            label1.Text = "Usuário";
+            LabelUsuario.AutoSize = true;
+            LabelUsuario.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            LabelUsuario.Location = new Point(12, 49);
+            LabelUsuario.Name = "LabelUsuario";
+            LabelUsuario.Size = new Size(64, 21);
+            LabelUsuario.TabIndex = 4;
+            LabelUsuario.Text = "Usuário";
             // 
-            // label2
+            // LabelSenha
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(171, 161);
-            label2.Name = "label2";
-            label2.Size = new Size(39, 15);
-            label2.TabIndex = 5;
-            label2.Text = "Senha";
+            LabelSenha.AutoSize = true;
+            LabelSenha.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            LabelSenha.Location = new Point(12, 98);
+            LabelSenha.Name = "LabelSenha";
+            LabelSenha.Size = new Size(53, 21);
+            LabelSenha.TabIndex = 5;
+            LabelSenha.Text = "Senha";
+            // 
+            // ButtonCancelar
+            // 
+            ButtonCancelar.Location = new Point(176, 201);
+            ButtonCancelar.Name = "ButtonCancelar";
+            ButtonCancelar.Size = new Size(75, 23);
+            ButtonCancelar.TabIndex = 6;
+            ButtonCancelar.Text = "Cancelar";
+            ButtonCancelar.UseVisualStyleBackColor = true;
+            ButtonCancelar.Click += ButtonCancelar_Click;
             // 
             // FormLogin
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
-            Controls.Add(label2);
-            Controls.Add(label1);
-            Controls.Add(txtSenha);
-            Controls.Add(this.txtUsuario);
-            Controls.Add(this.btnEsqueci);
-            Controls.Add(this.btnLogin);
+            ClientSize = new Size(344, 236);
+            Controls.Add(ButtonCancelar);
+            Controls.Add(LabelSenha);
+            Controls.Add(LabelUsuario);
+            Controls.Add(TextBoxSenha);
+            Controls.Add(TextBoxUsuario);
+            Controls.Add(ButtonEsqueci);
+            Controls.Add(ButtonEntrar);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            Icon = (Icon)resources.GetObject("$this.Icon");
+            MaximizeBox = false;
+            MinimizeBox = false;
             Name = "FormLogin";
-            Text = "FormLogin";
+            StartPosition = FormStartPosition.CenterParent;
+            Text = "Entrar";
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private Button btnLogin;
-        private Button btnEsqueci;
-        private TextBox txtUsuario;
-        private TextBox txtSenha;
-        private Label label1;
-        private Label label2;
+        private Button ButtonEntrar;
+        private Button ButtonEsqueci;
+        private TextBox TextBoxUsuario;
+        private TextBox TextBoxSenha;
+        private Label LabelUsuario;
+        private Label LabelSenha;
+        private Button ButtonCancelar;
     }
 }

@@ -7,9 +7,26 @@ internal class BancoDados : DbContext
 {
     public DbSet<Livro> Livros { get; set; }
     public DbSet<Estoque> Estoques { get; set; }
+    public DbSet<UsuarioSistema> Usuarios { get; set; }
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
-        optionsBuilder.UseSqlite("Data Source=biblioteca.db");
+        optionsBuilder.UseSqlite("Data Source=biblioteca.db")
+            .UseSeeding((context, _) => {
+                UsuarioSistema? root = context.Set<UsuarioSistema>().FirstOrDefault(b => b.Usuario == "admin");
+                if (root == null)
+                {
+                    UsuarioSistema admin = new()
+                    { 
+                        Usuario = "Admin",
+                        Tipo = TipoUsuario.Funcionario, 
+                        Nome = "Administrador", 
+                        Email = "admin@biblioteca.com"
+                    };
+                    admin.DefinirSenha("Teste@123");
+                    context.Set<UsuarioSistema>().Add(admin);
+                    context.SaveChanges();
+                }
+            });
     }
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

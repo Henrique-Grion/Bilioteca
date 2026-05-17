@@ -8,9 +8,9 @@ using System.Windows.Forms;
 
 namespace Bilioteca.Formularios
 {
-    public partial class EditarLivro : Form
+    public partial class FormEditarLivro : Form
     {
-        public EditarLivro()
+        public FormEditarLivro()
         {
             InitializeComponent();
         }

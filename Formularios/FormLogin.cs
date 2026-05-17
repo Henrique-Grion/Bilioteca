@@ -1,38 +1,47 @@
-﻿using Bilioteca.Entidades;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
-using System.Windows.Forms;
+﻿using Bilioteca;
+using Bilioteca.Entidades;
 
-namespace Biblioteca
+namespace Biblioteca;
+
+public partial class FormLogin : Form
 {
-    public partial class FormLogin : Form
+    public FormLogin()
     {
-        public FormLogin()
+        InitializeComponent();
+    }
+
+    private void ButtonEntrar_Click(object sender, EventArgs e)
+    {
+        string loginDigitado = TextBoxUsuario.Text;
+        string senhaDigitada = TextBoxSenha.Text;
+        if (string.IsNullOrWhiteSpace(loginDigitado) || string.IsNullOrWhiteSpace(senhaDigitada))
         {
-            InitializeComponent();
+            MessageBox.Show("Por favor, preencha ambos os campos de login e senha.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            return;
         }
-
-        private void btnLogin_Click(object sender, EventArgs e)
+        using BancoDados db = new();
+        UsuarioSistema? us = db.Usuarios.FirstOrDefault(u => u.Usuario == loginDigitado);
+        if (us == null || !us.Autenticar(senhaDigitada))
         {
-            UsuarioSistema usuario = new UsuarioSistema();
-
-            string loginDigitado = txtUsuario.Text;
-            string senhaDigitada = txtSenha.Text;
-
-            if (usuario.Autenticar(loginDigitado, senhaDigitada))
-            {
-                MessageBox.Show("Login realizado com suceso.");
-            }
+            Logger.Instance.Informacao($"Tentativa de login falhou para o usuário '{loginDigitado}'.");
+            MessageBox.Show("Credenciais inválidas. Por favor, tente novamente.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            return;
         }
+        Logger.Instance.Informacao($"Usuário '{loginDigitado}' logou com sucesso.");
+        MessageBox.Show("Login realizado com suceso.", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        Program.UsuarioLogado = us;
+        DialogResult = DialogResult.OK;
+        Close();
+    }
 
-        private void btnEsqueci_Click(object sender, EventArgs e)
-        {
-            var formEsqueci = new FormEsqueci();
-            formEsqueci.ShowDialog();
-        }
+    private void ButtonEsqueci_Click(object sender, EventArgs e)
+    {
+        new FormEsqueci().ShowDialog();
+    }
+
+    private void ButtonCancelar_Click(object sender, EventArgs e)
+    {
+        DialogResult = DialogResult.Cancel;
+        Close();
     }
 }

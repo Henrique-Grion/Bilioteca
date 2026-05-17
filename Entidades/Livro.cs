@@ -1,16 +1,16 @@
 ﻿namespace Bilioteca.Entidades;
 
-enum Genero
+public enum Genero
 {
     Ficcao,
-    NaoFiccao,
+    Filosofia,
     Romance,
     Aventura,
     Ciencia,
     Historia
 }
 
-enum Idioma
+public enum Idioma
 {
     Portugues,
     Ingles,
