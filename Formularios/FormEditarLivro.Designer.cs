@@ -28,88 +28,93 @@
         /// </summary>
         private void InitializeComponent()
         {
-            TituloLabel = new Label();
-            TituloTextBox = new TextBox();
-            AutorLabel = new Label();
-            AutorTextBox = new TextBox();
-            AnoPublicacaoLabel = new Label();
-            AnoPublicacaoNumericUpDown = new NumericUpDown();
-            GeneroComboBox = new ComboBox();
-            GeneroLabel = new Label();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormEditarLivro));
+            LabelTitulo = new Label();
+            TextBoxTitulo = new TextBox();
+            LabelAutor = new Label();
+            TextBoxAutor = new TextBox();
+            LabelAnoPublicacao = new Label();
+            NumericUpDownAnoPublicacao = new NumericUpDown();
+            ComboBoxGenero = new ComboBox();
+            LabelGenero = new Label();
             IdiomaComboBox = new ComboBox();
-            IdiomaLabel = new Label();
-            PaginasNumericUpDown = new NumericUpDown();
-            PaginasLabel = new Label();
-            SalvarButton = new Button();
-            CancelarButton = new Button();
-            ((System.ComponentModel.ISupportInitialize)AnoPublicacaoNumericUpDown).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)PaginasNumericUpDown).BeginInit();
+            LabelIdioma = new Label();
+            NumericUpDownPaginas = new NumericUpDown();
+            LabelPaginas = new Label();
+            ButtonSalvar = new Button();
+            ButtonCancelar = new Button();
+            ((System.ComponentModel.ISupportInitialize)NumericUpDownAnoPublicacao).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)NumericUpDownPaginas).BeginInit();
             SuspendLayout();
             // 
-            // TituloLabel
+            // LabelTitulo
             // 
-            TituloLabel.AutoSize = true;
-            TituloLabel.Location = new Point(12, 9);
-            TituloLabel.Name = "TituloLabel";
-            TituloLabel.Size = new Size(41, 15);
-            TituloLabel.TabIndex = 0;
-            TituloLabel.Text = "Título:";
+            LabelTitulo.AutoSize = true;
+            LabelTitulo.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            LabelTitulo.Location = new Point(12, 9);
+            LabelTitulo.Name = "LabelTitulo";
+            LabelTitulo.Size = new Size(52, 21);
+            LabelTitulo.TabIndex = 0;
+            LabelTitulo.Text = "Título:";
             // 
-            // TituloTextBox
+            // TextBoxTitulo
             // 
-            TituloTextBox.Location = new Point(59, 6);
-            TituloTextBox.Name = "TituloTextBox";
-            TituloTextBox.Size = new Size(243, 23);
-            TituloTextBox.TabIndex = 1;
+            TextBoxTitulo.Location = new Point(59, 6);
+            TextBoxTitulo.Name = "TextBoxTitulo";
+            TextBoxTitulo.Size = new Size(243, 23);
+            TextBoxTitulo.TabIndex = 1;
             // 
-            // AutorLabel
+            // LabelAutor
             // 
-            AutorLabel.AutoSize = true;
-            AutorLabel.Location = new Point(12, 38);
-            AutorLabel.Name = "AutorLabel";
-            AutorLabel.Size = new Size(40, 15);
-            AutorLabel.TabIndex = 2;
-            AutorLabel.Text = "Autor:";
+            LabelAutor.AutoSize = true;
+            LabelAutor.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            LabelAutor.Location = new Point(12, 38);
+            LabelAutor.Name = "LabelAutor";
+            LabelAutor.Size = new Size(52, 21);
+            LabelAutor.TabIndex = 2;
+            LabelAutor.Text = "Autor:";
             // 
-            // AutorTextBox
+            // TextBoxAutor
             // 
-            AutorTextBox.Location = new Point(58, 35);
-            AutorTextBox.Name = "AutorTextBox";
-            AutorTextBox.Size = new Size(244, 23);
-            AutorTextBox.TabIndex = 3;
+            TextBoxAutor.Location = new Point(58, 35);
+            TextBoxAutor.Name = "TextBoxAutor";
+            TextBoxAutor.Size = new Size(244, 23);
+            TextBoxAutor.TabIndex = 3;
             // 
-            // AnoPublicacaoLabel
+            // LabelAnoPublicacao
             // 
-            AnoPublicacaoLabel.AutoSize = true;
-            AnoPublicacaoLabel.Location = new Point(12, 67);
-            AnoPublicacaoLabel.Name = "AnoPublicacaoLabel";
-            AnoPublicacaoLabel.Size = new Size(109, 15);
-            AnoPublicacaoLabel.TabIndex = 4;
-            AnoPublicacaoLabel.Text = "Ano de Publicação:";
+            LabelAnoPublicacao.AutoSize = true;
+            LabelAnoPublicacao.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            LabelAnoPublicacao.Location = new Point(12, 67);
+            LabelAnoPublicacao.Name = "LabelAnoPublicacao";
+            LabelAnoPublicacao.Size = new Size(140, 21);
+            LabelAnoPublicacao.TabIndex = 4;
+            LabelAnoPublicacao.Text = "Ano de Publicação:";
             // 
-            // AnoPublicacaoNumericUpDown
+            // NumericUpDownAnoPublicacao
             // 
-            AnoPublicacaoNumericUpDown.Location = new Point(127, 64);
-            AnoPublicacaoNumericUpDown.Name = "AnoPublicacaoNumericUpDown";
-            AnoPublicacaoNumericUpDown.Size = new Size(175, 23);
-            AnoPublicacaoNumericUpDown.TabIndex = 5;
+            NumericUpDownAnoPublicacao.Location = new Point(127, 64);
+            NumericUpDownAnoPublicacao.Name = "NumericUpDownAnoPublicacao";
+            NumericUpDownAnoPublicacao.Size = new Size(175, 23);
+            NumericUpDownAnoPublicacao.TabIndex = 5;
             // 
-            // GeneroComboBox
+            // ComboBoxGenero
             // 
-            GeneroComboBox.FormattingEnabled = true;
-            GeneroComboBox.Location = new Point(65, 93);
-            GeneroComboBox.Name = "GeneroComboBox";
-            GeneroComboBox.Size = new Size(237, 23);
-            GeneroComboBox.TabIndex = 6;
+            ComboBoxGenero.FormattingEnabled = true;
+            ComboBoxGenero.Location = new Point(65, 93);
+            ComboBoxGenero.Name = "ComboBoxGenero";
+            ComboBoxGenero.Size = new Size(237, 23);
+            ComboBoxGenero.TabIndex = 6;
             // 
-            // GeneroLabel
+            // LabelGenero
             // 
-            GeneroLabel.AutoSize = true;
-            GeneroLabel.Location = new Point(12, 96);
-            GeneroLabel.Name = "GeneroLabel";
-            GeneroLabel.Size = new Size(48, 15);
-            GeneroLabel.TabIndex = 7;
-            GeneroLabel.Text = "Gênero:";
+            LabelGenero.AutoSize = true;
+            LabelGenero.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            LabelGenero.Location = new Point(12, 96);
+            LabelGenero.Name = "LabelGenero";
+            LabelGenero.Size = new Size(64, 21);
+            LabelGenero.TabIndex = 7;
+            LabelGenero.Text = "Gênero:";
             // 
             // IdiomaComboBox
             // 
@@ -119,91 +124,98 @@
             IdiomaComboBox.Size = new Size(237, 23);
             IdiomaComboBox.TabIndex = 8;
             // 
-            // IdiomaLabel
+            // LabelIdioma
             // 
-            IdiomaLabel.AutoSize = true;
-            IdiomaLabel.Location = new Point(12, 154);
-            IdiomaLabel.Name = "IdiomaLabel";
-            IdiomaLabel.Size = new Size(47, 15);
-            IdiomaLabel.TabIndex = 9;
-            IdiomaLabel.Text = "Idioma:";
+            LabelIdioma.AutoSize = true;
+            LabelIdioma.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            LabelIdioma.Location = new Point(12, 154);
+            LabelIdioma.Name = "LabelIdioma";
+            LabelIdioma.Size = new Size(61, 21);
+            LabelIdioma.TabIndex = 9;
+            LabelIdioma.Text = "Idioma:";
             // 
-            // PaginasNumericUpDown
+            // NumericUpDownPaginas
             // 
-            PaginasNumericUpDown.Location = new Point(86, 122);
-            PaginasNumericUpDown.Name = "PaginasNumericUpDown";
-            PaginasNumericUpDown.Size = new Size(216, 23);
-            PaginasNumericUpDown.TabIndex = 10;
+            NumericUpDownPaginas.Location = new Point(86, 122);
+            NumericUpDownPaginas.Name = "NumericUpDownPaginas";
+            NumericUpDownPaginas.Size = new Size(216, 23);
+            NumericUpDownPaginas.TabIndex = 10;
             // 
-            // PaginasLabel
+            // LabelPaginas
             // 
-            PaginasLabel.AutoSize = true;
-            PaginasLabel.Location = new Point(12, 124);
-            PaginasLabel.Name = "PaginasLabel";
-            PaginasLabel.Size = new Size(68, 15);
-            PaginasLabel.TabIndex = 11;
-            PaginasLabel.Text = "Nº Páginas:";
+            LabelPaginas.AutoSize = true;
+            LabelPaginas.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            LabelPaginas.Location = new Point(12, 124);
+            LabelPaginas.Name = "LabelPaginas";
+            LabelPaginas.Size = new Size(89, 21);
+            LabelPaginas.TabIndex = 11;
+            LabelPaginas.Text = "Nº Páginas:";
             // 
-            // SalvarButton
+            // ButtonSalvar
             // 
-            SalvarButton.Location = new Point(227, 237);
-            SalvarButton.Name = "SalvarButton";
-            SalvarButton.Size = new Size(75, 23);
-            SalvarButton.TabIndex = 12;
-            SalvarButton.Text = "Salvar";
-            SalvarButton.UseVisualStyleBackColor = true;
+            ButtonSalvar.Location = new Point(227, 237);
+            ButtonSalvar.Name = "ButtonSalvar";
+            ButtonSalvar.Size = new Size(75, 23);
+            ButtonSalvar.TabIndex = 12;
+            ButtonSalvar.Text = "Salvar";
+            ButtonSalvar.UseVisualStyleBackColor = true;
             // 
-            // CancelarButton
+            // ButtonCancelar
             // 
-            CancelarButton.Location = new Point(146, 237);
-            CancelarButton.Name = "CancelarButton";
-            CancelarButton.Size = new Size(75, 23);
-            CancelarButton.TabIndex = 13;
-            CancelarButton.Text = "Cancelar";
-            CancelarButton.UseVisualStyleBackColor = true;
+            ButtonCancelar.Location = new Point(146, 237);
+            ButtonCancelar.Name = "ButtonCancelar";
+            ButtonCancelar.Size = new Size(75, 23);
+            ButtonCancelar.TabIndex = 13;
+            ButtonCancelar.Text = "Cancelar";
+            ButtonCancelar.UseVisualStyleBackColor = true;
             // 
-            // EditarLivro
+            // FormEditarLivro
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(320, 272);
-            Controls.Add(CancelarButton);
-            Controls.Add(SalvarButton);
-            Controls.Add(PaginasLabel);
-            Controls.Add(PaginasNumericUpDown);
-            Controls.Add(IdiomaLabel);
+            Controls.Add(ButtonCancelar);
+            Controls.Add(ButtonSalvar);
+            Controls.Add(LabelPaginas);
+            Controls.Add(NumericUpDownPaginas);
+            Controls.Add(LabelIdioma);
             Controls.Add(IdiomaComboBox);
-            Controls.Add(GeneroLabel);
-            Controls.Add(GeneroComboBox);
-            Controls.Add(AnoPublicacaoNumericUpDown);
-            Controls.Add(AnoPublicacaoLabel);
-            Controls.Add(AutorTextBox);
-            Controls.Add(AutorLabel);
-            Controls.Add(TituloTextBox);
-            Controls.Add(TituloLabel);
-            Name = "EditarLivro";
-            Text = "EditarLivro";
-            ((System.ComponentModel.ISupportInitialize)AnoPublicacaoNumericUpDown).EndInit();
-            ((System.ComponentModel.ISupportInitialize)PaginasNumericUpDown).EndInit();
+            Controls.Add(LabelGenero);
+            Controls.Add(ComboBoxGenero);
+            Controls.Add(NumericUpDownAnoPublicacao);
+            Controls.Add(LabelAnoPublicacao);
+            Controls.Add(TextBoxAutor);
+            Controls.Add(LabelAutor);
+            Controls.Add(TextBoxTitulo);
+            Controls.Add(LabelTitulo);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            Icon = (Icon)resources.GetObject("$this.Icon");
+            MaximizeBox = false;
+            MinimizeBox = false;
+            Name = "FormEditarLivro";
+            StartPosition = FormStartPosition.CenterParent;
+            Text = "Livro";
+            ((System.ComponentModel.ISupportInitialize)NumericUpDownAnoPublicacao).EndInit();
+            ((System.ComponentModel.ISupportInitialize)NumericUpDownPaginas).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private Label TituloLabel;
-        private TextBox TituloTextBox;
-        private Label AutorLabel;
-        private TextBox AutorTextBox;
-        private Label AnoPublicacaoLabel;
-        private NumericUpDown AnoPublicacaoNumericUpDown;
-        private ComboBox GeneroComboBox;
-        private Label GeneroLabel;
+        private Label LabelTitulo;
+        private TextBox TextBoxTitulo;
+        private Label LabelAutor;
+        private TextBox TextBoxAutor;
+        private Label LabelAnoPublicacao;
+        private NumericUpDown NumericUpDownAnoPublicacao;
+        private ComboBox ComboBoxGenero;
+        private Label LabelGenero;
         private ComboBox IdiomaComboBox;
-        private Label IdiomaLabel;
-        private NumericUpDown PaginasNumericUpDown;
-        private Label PaginasLabel;
-        private Button SalvarButton;
-        private Button CancelarButton;
+        private Label LabelIdioma;
+        private NumericUpDown NumericUpDownPaginas;
+        private Label LabelPaginas;
+        private Button ButtonSalvar;
+        private Button ButtonCancelar;
     }
 }

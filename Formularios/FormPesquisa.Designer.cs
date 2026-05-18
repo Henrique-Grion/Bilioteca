@@ -99,7 +99,7 @@
             // ComboBoxIdioma
             // 
             ComboBoxIdioma.FormattingEnabled = true;
-            ComboBoxIdioma.Items.AddRange(new object[] { "Português", "Inglês", "Espanhol", "Françes", "Alemão", "Outro" });
+            ComboBoxIdioma.Items.AddRange(new object[] { "Português", "Inglês", "Espanhol", "Francês", "Alemão", "Outro" });
             ComboBoxIdioma.Location = new Point(99, 19);
             ComboBoxIdioma.Name = "ComboBoxIdioma";
             ComboBoxIdioma.Size = new Size(209, 23);
@@ -220,7 +220,7 @@
             NumericUpDownAnoDe.Size = new Size(82, 23);
             NumericUpDownAnoDe.TabIndex = 14;
             // 
-            // Pesquisa
+            // FormPesquisa
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -234,7 +234,7 @@
             Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
             MinimizeBox = false;
-            Name = "Pesquisa";
+            Name = "FormPesquisa";
             StartPosition = FormStartPosition.CenterParent;
             Text = "Filtros";
             GroupBoxBusca.ResumeLayout(false);

@@ -43,7 +43,7 @@
             ButtonEntrar.Location = new Point(257, 201);
             ButtonEntrar.Name = "ButtonEntrar";
             ButtonEntrar.Size = new Size(75, 23);
-            ButtonEntrar.TabIndex = 0;
+            ButtonEntrar.TabIndex = 4;
             ButtonEntrar.Text = "Entrar";
             ButtonEntrar.UseVisualStyleBackColor = true;
             ButtonEntrar.Click += ButtonEntrar_Click;
@@ -53,7 +53,7 @@
             ButtonEsqueci.Location = new Point(12, 201);
             ButtonEsqueci.Name = "ButtonEsqueci";
             ButtonEsqueci.Size = new Size(115, 23);
-            ButtonEsqueci.TabIndex = 1;
+            ButtonEsqueci.TabIndex = 2;
             ButtonEsqueci.Text = "Esqueci a Senha";
             ButtonEsqueci.UseVisualStyleBackColor = true;
             ButtonEsqueci.Click += ButtonEsqueci_Click;
@@ -63,15 +63,16 @@
             TextBoxUsuario.Location = new Point(82, 47);
             TextBoxUsuario.Name = "TextBoxUsuario";
             TextBoxUsuario.Size = new Size(227, 23);
-            TextBoxUsuario.TabIndex = 2;
+            TextBoxUsuario.TabIndex = 0;
             // 
             // TextBoxSenha
             // 
             TextBoxSenha.Location = new Point(82, 96);
             TextBoxSenha.Name = "TextBoxSenha";
             TextBoxSenha.Size = new Size(227, 23);
-            TextBoxSenha.TabIndex = 3;
+            TextBoxSenha.TabIndex = 1;
             TextBoxSenha.UseSystemPasswordChar = true;
+            TextBoxSenha.KeyDown += TextBoxSenha_KeyDown;
             // 
             // LabelUsuario
             // 
@@ -98,7 +99,7 @@
             ButtonCancelar.Location = new Point(176, 201);
             ButtonCancelar.Name = "ButtonCancelar";
             ButtonCancelar.Size = new Size(75, 23);
-            ButtonCancelar.TabIndex = 6;
+            ButtonCancelar.TabIndex = 3;
             ButtonCancelar.Text = "Cancelar";
             ButtonCancelar.UseVisualStyleBackColor = true;
             ButtonCancelar.Click += ButtonCancelar_Click;

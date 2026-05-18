@@ -49,6 +49,10 @@ internal class BancoDados : DbContext
             .HasKey("Id");
 
         modelBuilder.Entity<UsuarioSistema>()
+            .Property<string>("Senha")
+            .UsePropertyAccessMode(PropertyAccessMode.Field);
+
+        modelBuilder.Entity<UsuarioSistema>()
             .Property<Guid>("Id")
             .ValueGeneratedOnAdd();
 

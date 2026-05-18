@@ -16,7 +16,7 @@ public partial class FormLogin : Form
         string senhaDigitada = TextBoxSenha.Text;
         if (string.IsNullOrWhiteSpace(loginDigitado) || string.IsNullOrWhiteSpace(senhaDigitada))
         {
-            MessageBox.Show("Por favor, preencha ambos os campos de login e senha.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            MessageBox.Show("Por favor, preencha ambos os campos de login e senha.", "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             return;
         }
         using BancoDados db = new();
@@ -24,11 +24,10 @@ public partial class FormLogin : Form
         if (us == null || !us.Autenticar(senhaDigitada))
         {
             Logger.Instance.Informacao($"Tentativa de login falhou para o usuário '{loginDigitado}'.");
-            MessageBox.Show("Credenciais inválidas. Por favor, tente novamente.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            MessageBox.Show("Credenciais inválidas. Por favor, tente novamente.", "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             return;
         }
         Logger.Instance.Informacao($"Usuário '{loginDigitado}' logou com sucesso.");
-        MessageBox.Show("Login realizado com suceso.", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
         Program.UsuarioLogado = us;
         DialogResult = DialogResult.OK;
         Close();
@@ -43,5 +42,13 @@ public partial class FormLogin : Form
     {
         DialogResult = DialogResult.Cancel;
         Close();
+    }
+
+    private void TextBoxSenha_KeyDown(object sender, KeyEventArgs e)
+    {
+        if (e.KeyCode == Keys.Enter)
+        {
+            ButtonEntrar_Click(sender, e);
+        }
     }
 }

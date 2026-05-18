@@ -37,9 +37,40 @@ public partial class Principal : Form
         AtualizarQtdFiltros();
     }
 
-    private void button2_Click(object sender, EventArgs e)
+    private void ButtonEntrar_Click(object sender, EventArgs e)
     {
         FormLogin login = new();
         login.ShowDialog(this);
+        if (login.DialogResult == DialogResult.OK)
+        {
+            ButtonEntrar.Visible = false;
+            ButtonSair.Visible = true;
+            ButtonNovoLivro.Visible = true;
+            ButtonUsuarios.Visible = true;
+        }
+    }
+
+    private void ButtonSair_Click(object sender, EventArgs e)
+    {
+        DialogResult = MessageBox.Show("Deseja realmente sair?", "Confirmação", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+        if (DialogResult == DialogResult.No)
+            return;
+        Program.UsuarioLogado = null;
+        ButtonEntrar.Visible = true;
+        ButtonSair.Visible = false;
+        ButtonNovoLivro.Visible = false;
+        ButtonUsuarios.Visible = false;
+    }
+
+    private void ButtonNovoLivro_Click(object sender, EventArgs e)
+    {
+        FormEditarLivro form = new();
+        form.ShowDialog(this);
+    }
+
+    private void ButtonUsuarios_Click(object sender, EventArgs e)
+    {
+        FormUsuarios form = new();
+        form.Show(this);
     }
 }

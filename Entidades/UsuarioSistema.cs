@@ -1,6 +1,6 @@
 ﻿namespace Bilioteca.Entidades;
 
-using Bilioteca.Utils;
+using Microsoft.AspNetCore.Identity;
 
 enum TipoUsuario
 {
@@ -22,10 +22,13 @@ internal class UsuarioSistema
     public bool EhLeitor => Tipo == TipoUsuario.Leitor;
     public void DefinirSenha(string senha)
     {
-        Senha = PasswordHasher.Hash(senha);
+        PasswordHasher<UsuarioSistema> passwordHasher = new();
+        Senha = passwordHasher.HashPassword(this, senha);
     }
     public bool Autenticar(string senha)
     {
-        return PasswordHasher.Verify(senha, Senha);
+        PasswordHasher<UsuarioSistema> passwordHasher = new();
+        PasswordVerificationResult result = passwordHasher.VerifyHashedPassword(this, Senha, senha);
+        return result == PasswordVerificationResult.Success || result == PasswordVerificationResult.SuccessRehashNeeded;
     }
 }

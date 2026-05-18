@@ -41,7 +41,10 @@
             ButtonFiltros = new Button();
             ButtonLimparFiltros = new Button();
             LabelQtdFiltros = new Label();
-            button2 = new Button();
+            ButtonEntrar = new Button();
+            ButtonSair = new Button();
+            ButtonNovoLivro = new Button();
+            ButtonUsuarios = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -151,18 +154,60 @@
             LabelQtdFiltros.TabIndex = 5;
             LabelQtdFiltros.Text = "0";
             // 
-            // button2
+            // ButtonEntrar
             // 
-            button2.Image = Properties.Resources.signout_106525;
-            button2.ImageAlign = ContentAlignment.MiddleLeft;
-            button2.Location = new Point(12, 12);
-            button2.Name = "button2";
-            button2.Size = new Size(78, 41);
-            button2.TabIndex = 6;
-            button2.Text = "Entrar";
-            button2.TextAlign = ContentAlignment.MiddleRight;
-            button2.UseVisualStyleBackColor = true;
-            button2.Click += button2_Click;
+            ButtonEntrar.Image = Properties.Resources.signout_106525;
+            ButtonEntrar.ImageAlign = ContentAlignment.MiddleLeft;
+            ButtonEntrar.Location = new Point(12, 12);
+            ButtonEntrar.Name = "ButtonEntrar";
+            ButtonEntrar.Size = new Size(78, 41);
+            ButtonEntrar.TabIndex = 6;
+            ButtonEntrar.Text = "Entrar";
+            ButtonEntrar.TextAlign = ContentAlignment.MiddleRight;
+            ButtonEntrar.UseVisualStyleBackColor = true;
+            ButtonEntrar.Click += ButtonEntrar_Click;
+            // 
+            // ButtonSair
+            // 
+            ButtonSair.Image = (Image)resources.GetObject("ButtonSair.Image");
+            ButtonSair.ImageAlign = ContentAlignment.MiddleLeft;
+            ButtonSair.Location = new Point(12, 12);
+            ButtonSair.Name = "ButtonSair";
+            ButtonSair.Size = new Size(78, 41);
+            ButtonSair.TabIndex = 7;
+            ButtonSair.Text = "Sair";
+            ButtonSair.TextAlign = ContentAlignment.MiddleRight;
+            ButtonSair.UseVisualStyleBackColor = true;
+            ButtonSair.Visible = false;
+            ButtonSair.Click += ButtonSair_Click;
+            // 
+            // ButtonNovoLivro
+            // 
+            ButtonNovoLivro.Image = (Image)resources.GetObject("ButtonNovoLivro.Image");
+            ButtonNovoLivro.ImageAlign = ContentAlignment.MiddleLeft;
+            ButtonNovoLivro.Location = new Point(96, 12);
+            ButtonNovoLivro.Name = "ButtonNovoLivro";
+            ButtonNovoLivro.Size = new Size(105, 41);
+            ButtonNovoLivro.TabIndex = 8;
+            ButtonNovoLivro.Text = "Novo Livro";
+            ButtonNovoLivro.TextAlign = ContentAlignment.MiddleRight;
+            ButtonNovoLivro.UseVisualStyleBackColor = true;
+            ButtonNovoLivro.Visible = false;
+            ButtonNovoLivro.Click += ButtonNovoLivro_Click;
+            // 
+            // ButtonUsuarios
+            // 
+            ButtonUsuarios.Image = (Image)resources.GetObject("ButtonUsuarios.Image");
+            ButtonUsuarios.ImageAlign = ContentAlignment.MiddleLeft;
+            ButtonUsuarios.Location = new Point(207, 12);
+            ButtonUsuarios.Name = "ButtonUsuarios";
+            ButtonUsuarios.Size = new Size(105, 41);
+            ButtonUsuarios.TabIndex = 9;
+            ButtonUsuarios.Text = "Usuários";
+            ButtonUsuarios.TextAlign = ContentAlignment.MiddleRight;
+            ButtonUsuarios.UseVisualStyleBackColor = true;
+            ButtonUsuarios.Visible = false;
+            ButtonUsuarios.Click += ButtonUsuarios_Click;
             // 
             // Principal
             // 
@@ -170,7 +215,10 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Control;
             ClientSize = new Size(800, 450);
-            Controls.Add(button2);
+            Controls.Add(ButtonUsuarios);
+            Controls.Add(ButtonNovoLivro);
+            Controls.Add(ButtonSair);
+            Controls.Add(ButtonEntrar);
             Controls.Add(LabelQtdFiltros);
             Controls.Add(ButtonLimparFiltros);
             Controls.Add(ButtonFiltros);
@@ -194,7 +242,7 @@
         private Button ButtonFiltros;
         private Button ButtonLimparFiltros;
         private Label LabelQtdFiltros;
-        private Button button2;
+        private Button ButtonEntrar;
         private DataGridViewTextBoxColumn ColunaTitulo;
         private DataGridViewTextBoxColumn ColunaAutor;
         private DataGridViewTextBoxColumn ColunaAnoPublicacao;
@@ -202,5 +250,8 @@
         private DataGridViewTextBoxColumn ColunaIdioma;
         private DataGridViewTextBoxColumn ColunaPaginas;
         private DataGridViewTextBoxColumn ColunaDisponivel;
+        private Button ButtonSair;
+        private Button ButtonNovoLivro;
+        private Button ButtonUsuarios;
     }
 }
